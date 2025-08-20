@@ -1,0 +1,61 @@
+# Dependencies
+node_modules/
+vendor/
+*.lock
+package-lock.json
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+log/
+logs/
+tmp/
+
+# Database
+*.sqlite3
+*.db
+storage/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Build outputs
+dist/
+build/
+coverage/
+.cache/
+
+# Rails specific
+portfolio-backend/tmp/
+portfolio-backend/log/
+portfolio-backend/storage/
+portfolio-backend/public/assets/
+portfolio-backend/config/master.key
+portfolio-backend/config/credentials.yml.enc
+
+# Next.js specific
+portfolio-frontend/.next/
+portfolio-frontend/out/
+portfolio-frontend/build/
+
+# Documentation build
+docs/_build/
+docs/.jekyll-cache/
+
+# Testing
+spec/examples.txt
+cypress/videos/
+cypress/screenshots/
+
+# Temporary - submodules to be configured later
+portfolio-backend/
+portfolio-frontend/
+sms-consumer/
