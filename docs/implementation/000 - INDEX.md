@@ -1,0 +1,136 @@
+# WORKBOOK
+
+## Documentación de Implementación (Español)
+- 001.00 | Configuración Inicial del Proyecto Rails.md
+- 002.00 | Creación de Modelos Base (User, Platform, Role).md
+- 003.00 | Implementar Autenticación con Rodauth + OAuth (configurable por entorno).md
+- 004.00 | Implementar Autorización con Pundit + Rolify + PostgreSQL RLS.md
+- 005.00 | Configurar Feature Flags con Flipper.md
+- 006.00 | Configurar Background Jobs con Solid Queue.md
+- 007.00 | Configurar Almacenamiento de Archivos con Active Storage (S3 en Producción, Local en Desarrollo).md
+- 008.00 | Configurar Caché con Solid Cache + Fragment Caching + HTTP Cache.md
+- 009.00 | Implementar Elasticsearch + Searchkick para Búsqueda Full-Text.md
+- 010.00 | Configurar Logs y Monitoreo con Lograge + DataDog.md
+- 011.00 | Implementar WebSockets con ActionCable + AnyCable + Pusher.md
+- 012.00 | Implementar Notificaciones con Noticed (Email, WebSockets, Slack, SMS).md
+- 012.00 | Implementar Notificaciones con Noticed (Email, WebSockets, Slack, SMS, WhatsApp).md
+- 013.00 | Configurar Generación de PDFs con Prawn.md
+- 014.00 | Configurar CI/CD con GitHub Actions + GitLab CI/CD + Jenkins.md
+- 015.00 | Configurar Terraform para Infraestructura como Código (IaC).md
+- 016.00 | Configurar Pulumi con Ruby para Aprovisionamiento Dinámico.md
+- 017.00 | Integrar Pulumi en CI/CD para Aprovisionamiento Automático.md
+- 018.00 | Implementar Métricas y Monitoreo con Grafana + Prometheus.md
+- 019.00 | Implementar Generación de Códigos QR con RQRCode.md
+- 020.00 | Implementar Webhooks con Rails Nativo + Karafka (Kafka).md
+- 020.00 | Implementar Webhooks con Rails Nativo + Karafka + Redpanda.md
+- 021.00 | Implementar Generación de Reportes con Axlsx + Chartkick + Blazer.md
+- 022.00 | Configurar Seguridad Adicional con JWT y Rate Limiting.md
+- 023.00 | Implementar API GraphQL con GraphQL-Ruby.md
+- 024.00 | Implementar Webhooks de Respuesta para GraphQL y REST.md
+- 025.00 | Implementar Soporte para Webhooks Asíncronos con Solid Queue.md
+- 026.00 | Agregar Soporte para WebSockets en Webhooks (Tiempo Real).md
+- 027.00 | Implementar Webhooks Seguros con Firmas HMAC.md
+- 028.00 | Implementar Registro de Eventos Webhook en Base de Datos.md
+- 029.00 | Implementar Soporte para Webhooks en GraphQL Subscriptions.md
+- 030.00 | Implementar Dashboard de Webhooks con Hotwire + Turbo Streams.md
+- 031.00 | Implementar Exportación de Webhooks a CSV y JSON.md
+- 032.00 | Implementar Integración con Zapier para Automatización de Webhooks.md
+- 033.00 | Implementar Firma de Documentos PDF con Prawn + Digital Signatures.md
+- 034.00 | Integrar Firma de Documentos con DocuSign API.md
+- 035.00 | Implementar Almacenamiento en Blockchain para Certificación de Documentos.md
+- 036.00 | Integrar Notificaciones Web3 con Wallets (MetaMask / WalletConnect).md
+- 037.00 | Implementar Interfaz de Notificaciones Web3 en el Frontend.md
+- 038.00 | Implementar Firma de Contratos Inteligentes con MetaMask.md
+- 039.00 | Implementar Gasless Transactions con Meta Transactions.md
+- 040.00 | Integrar Firma Digital con Ledger y Hardware Wallets.md
+- 040.00 | Integrar Firma Digital con Trezor (Hardware Wallets).md
+- 041.00 | Integrar Soporte para Trezor en Smart Contracts On-Chain.md
+- 042.00 | Agregar Soporte para Firmas Multisig con Gnosis Safe.md
+- 043.00 | Implementar Notificaciones para Firmas Pendientes en Gnosis Safe.md
+- 044.00 | Integrar Dashboard de Firmas Multisig con Gnosis Safe UI.md
+- 044.00 | Integrar Dashboard de Firmas Multisig con React + Safe Apps SDK.md
+- 045.00 | Integrar Safe Apps en la Plataforma con iFrame Embebido.md
+- 045.00 | Integrar Firma de Contratos Multisig en Gnosis Safe con Meta Transactions.md
+- 046.00 | Integrar Dashboard de Firmas Multisig con UI Mejorada.md
+- 046.00 | Integrar Dashboard de Firmas Multisig con UI Mejorada (Tailwind CSS + ViewComponents).md
+- 047.00 | Agregar Soporte para Notificaciones en Telegram y Discord.md
+- 048.00 | Agregar Webhooks para Confirmación de Firma en Gnosis Safe.md
+- 049.00 | Integrar Notificaciones por Email para Firmantes de Gnosis Safe.md
+- 050.00 | Agregar Confirmaciones de Firma Vía SMS con Twilio.md
+- 050.00 | Agregar Confirmaciones de Firma Vía SMS y WhatsApp con Twilio.md
+- 051.00 | Agregar Verificación de Identidad con Web3 ID (Ethereum Sign-In).md
+- 052.00 | Agregar Soporte para Delegación de Firma con Smart Contract Wallets.md
+- 052.00 | Agregar Soporte para Delegación de Firma con Smart Contract Wallets (Gnosis Safe, Argent, etc.).md
+- 053.00 | Integrar Recuperación de Cuenta usando Passkeys (WebAuthn).md
+- 054.00 | Agregar Recuperación de Cuenta con Social Login (Google, Twitter, Discord).md
+- 054.00 | Reemplazar Devise por Rodauth y Continuar con la Implementación.md
+- 055.00 | Reemplazar Devise por Rodauth.md
+- 055.00 | Reemplazar Devise por Rodauth con SQLite en desarrollo y PostgreSQL en producción.md
+- 056.00 | Integrar Passkeys (WebAuthn) con Rodauth.md
+- 057.00 | Agregar Multi-Factor Authentication (MFA) con TOTP y SMS.md
+- 057.00 | Agregar Multi-Factor Authentication (MFA) con TOTP y SMS en Rodauth.md
+- 058.00 | Integrar Autenticación con Web3 + Rodauth en API JSON.md
+- 059.00 | Implementar Web3 Token-Based Authentication con JWT.md
+- 060.00 | Implementar Refresh Tokens para Sesiones Largas.md
+- 060.00 | Implementar Refresh Tokens para Sesiones Largas en Rodauth + JWT.md
+- 061.00 | Integrar Soporte para Web3 Delegated Signing (EIP-712).md
+- 062.00 | Agregar Integración con WalletConnect para Firmas Móviles.md
+- 063.00 | Integrar Pago con Criptomonedas usando Stripe Crypto & Onramper.md
+- 064.00 | Agregar Facturación en Cripto con Smart Contracts (ERC-20, ERC-721, ERC-1155).md
+- 065.00 | Integrar Soporte para Facturación con IPFS y NFT Receipts.md
+- 066.00 | Agregar Integración con DAOs para Pagos y Facturación Descentralizada.md
+- 067.00 | Integrar Panel de Administración para DAOs con Aragon Client.md
+- 068.00 | Implementar Aragon Permissions Manager para Control de Accesos en DAO.md
+- 069.00 | Integrar Delegación de Voto y Gobernanza Descentralizada con Aragon Voice.md
+- 070.00 | Integrar Gobernanza Basada en Reputation Score y Soulbound Tokens (SBTs).md
+- 071.00 | Integrar NFTs de Gobernanza para Representación de Poder en la DAO.md
+- 072.00 | Implementar Mercado de NFTs de Gobernanza en OpenSea.md
+- 073.00 | Integrar Staking de NFTs para Gobernanza Activa.md
+- 074.00 | Integrar Incentivos en Tokens ERC-20 para Staking de NFTs.md
+- 075.00 | Integrar Compra de Tokens de Recompensa con Fiat (Onramper + Stripe Crypto).md
+- 076.00 | Implementar Pool de Liquidez en Uniswap para GOVR.md
+- 077.00 | Integrar Recompensas de Yield Farming para Proveedores de Liquidez.md
+- 078.00 | Implementar DAO con Gobernanza de Liquidez (Balancer Smart Pool).md
+- 079.00 | Integrar Distribución de Recompensas en DAOs Basada en Contribución de Liquidez.md
+- 080.00 | Integrar Panel de DAO en Aragon con Conexión Directa a Smart Contracts.md
+- 081.00 | Integrar Recompensas Automáticas para Usuarios Activos en la DAO.md
+- 082.00 | Integrar Herramientas de Gobernanza en Snapshot para Votaciones Off-Chain.md
+- 083.00 | Implementar Tesorería Descentralizada con Gnosis Safe.md
+- 084.00 | Integrar Mecanismo de Pago Automático en la DAO (Streaming con Superfluid).md
+- 085.00 | Integrar Gobernanza con Tally para Propuestas Ejecutables en On-Chain.md
+- 085.00 | Integrar Gobernanza con Tally para Propuestas Ejecutables On-Chain.md
+- 086.00 | Integrar Oracle de Datos en la DAO (Chainlink).md
+- 087.00 | Implementar Alertas y Notificaciones en la DAO (Push Protocol).md
+- 088.00 | Integrar Gobernanza Descentralizada con Coordinape para Recompensas de Contribuyentes.md
+- 089.00 | Integrar Delegación de Voto con Token Staking (Lido o Rocket Pool).md
+- 090.00 | Integrar Mecanismo de Liquidez con Uniswap V3 para GOVR.md
+- 091.00 | Integrar Subastas de NFT con Zora Protocol.md
+- 092.00 | Integrar Identidad Descentralizada con ENS y Worldcoin.md
+- 093.00 | Integrar Infraestructura con Pulumi para Despliegue Multi-Cloud.md
+- 094.00 | Integrar Seguridad con Fireblocks y OpenZeppelin Defender.md
+- 095.00 | Implementar Gestión de Contratos con Safe Modules (Gnosis Safe + Zodiac).md
+- 096.00 | Integrar Automatización de Gobernanza con Aragon Voice.md
+- 097.00 | Integrar Verificación de Contribuyentes con Gitcoin Passport.md
+- 098.00 | Integrar Préstamos Descentralizados con Aave y Morpho.md
+- 099.00 | Implementar Pagos de Nómina Descentralizados con Superfluid.md
+- 100.00 | Implementar Comercio Web3 con Unlock Protocol.md
+- 101.00 | Integrar Mensajería On-Chain con XMTP (Web3 Messaging).md
+- 102.00 | Integrar Identidad Soberana con Ceramic & IDX.md
+- 103.00 | Integrar Credenciales Web3 con Verifiable Credentials (VCs).md
+- 104.00 | Integrar DeFi Farming para DAO Treasury con Yearn & Convex.md
+- 105.00 | Integrar Generación de Reportes On-Chain con Dune Analytics.md
+- 106.00 | Integrar Protección de Claves con Lit Protocol (Threshold Encryption).md
+- 107.00 | Integrar Cross-Chain Messaging con LayerZero.md
+- 108.00 | Integrar Staking de Tokens DAO con Lido Finance.md
+- 109.00 | Integrar Seguros para la DAO con Nexus Mutual.md
+- 110.00 | Integrar Compliance y Auditoría con OpenZeppelin Defender.md
+- 111.00 | Integrar DAO-to-DAO (D2D) Governance con Gnosis Zodiac.md
+- 112.00 | Integrar Marketplace de Servicios DAO con Aragon OSx.md
+- 113.00 | Integrar Identidad Digital DAO con World ID.md
+- 114.00 | Integrar Tesorería Multi-Sig con Safe (antes Gnosis Safe).md
+- 115.00 | Integrar Coordinación de Tareas con Coordinape.md
+- 116.00 | Integrar Cumplimiento Regulatorio con Chainalysis KYT.md
+- 117.00 | Integrar Verificación de DAO con Ethereum Attestation Service (EAS).md
+- 118.00 | Integrar Subvenciones y Financiamiento DAO con Gitcoin Grants.md
+- 119.00 | Integrar Tokenización de Activos DAO con ERC-6551 (Account Abstraction).md
+- 120.00 | Integrar DAOs Autónomas con AI Agents (Autonomous DAOs).md

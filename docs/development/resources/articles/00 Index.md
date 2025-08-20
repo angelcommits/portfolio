@@ -1,0 +1,2 @@
+- 001: 🔧 Cómo construí un sistema Full Stack moderno con Rails y React desde cero
+- 002: 🚨 TODO: Backend
