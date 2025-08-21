@@ -1,0 +1,235 @@
+name: Deploy to Production
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to deploy'
+        required: true
+        type: string
+
+env:
+  RUBY_VERSION: 3.3.0
+  NODE_VERSION: 20
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  test:
+    name: Run Full Test Suite
+    uses: ./.github/workflows/ci.yml
+    secrets: inherit
+
+  build-backend:
+    name: Build Backend Production Image
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.tag || github.ref }}
+      
+      - name: Log in to Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-backend
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=raw,value=production
+            type=raw,value=latest
+      
+      - name: Build and push backend Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./portfolio-backend
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            RAILS_ENV=production
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  build-frontend:
+    name: Build Frontend Production Image
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.tag || github.ref }}
+      
+      - name: Log in to Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-frontend
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=raw,value=production
+            type=raw,value=latest
+      
+      - name: Build and push frontend Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./portfolio-frontend
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            NODE_ENV=production
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: [build-backend, build-frontend]
+    environment:
+      name: production
+      url: https://portfolio.example.com
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.tag || github.ref }}
+      
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.PRODUCTION_SSH_KEY }}
+      
+      - name: Add production servers to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          for host in ${{ secrets.PRODUCTION_HOSTS }}; do
+            ssh-keyscan -H $host >> ~/.ssh/known_hosts
+          done
+      
+      - name: Create backup
+        run: |
+          ssh ${{ secrets.PRODUCTION_USER }}@${{ secrets.PRODUCTION_PRIMARY_HOST }} \
+            "cd /app && ./scripts/backup.sh"
+      
+      - name: Deploy with Kamal (Blue-Green)
+        env:
+          KAMAL_REGISTRY_USERNAME: ${{ github.actor }}
+          KAMAL_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          RAILS_MASTER_KEY: ${{ secrets.PRODUCTION_RAILS_MASTER_KEY }}
+          DATABASE_URL: ${{ secrets.PRODUCTION_DATABASE_URL }}
+          REDIS_URL: ${{ secrets.PRODUCTION_REDIS_URL }}
+        run: |
+          gem install kamal
+          kamal env push --destination production
+          kamal deploy --destination production --version ${{ github.ref_name }}
+      
+      - name: Run database migrations
+        run: |
+          ssh ${{ secrets.PRODUCTION_USER }}@${{ secrets.PRODUCTION_PRIMARY_HOST }} \
+            "cd /app && docker exec portfolio-backend rails db:migrate"
+      
+      - name: Health checks
+        run: |
+          for host in ${{ secrets.PRODUCTION_HOSTS }}; do
+            for i in {1..30}; do
+              if curl -f https://$host/health; then
+                echo "Application on $host is healthy"
+                break
+              fi
+              echo "Waiting for application on $host to be ready... ($i/30)"
+              sleep 10
+            done
+          done
+      
+      - name: Smoke tests
+        run: |
+          npm install -g newman
+          newman run portfolio-backend/postman/production-smoke-tests.json \
+            --environment portfolio-backend/postman/production-env.json
+      
+      - name: Rollback on failure
+        if: failure()
+        run: |
+          kamal rollback --destination production
+          ssh ${{ secrets.PRODUCTION_USER }}@${{ secrets.PRODUCTION_PRIMARY_HOST }} \
+            "cd /app && ./scripts/restore-backup.sh"
+      
+      - name: Create release
+        if: success()
+        uses: softprops/action-gh-release@v1
+        with:
+          generate_release_notes: true
+          files: |
+            CHANGELOG.md
+            docs/RELEASE_NOTES.md
+      
+      - name: Notify deployment status
+        if: always()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: 'Production deployment ${{ job.status }} for version ${{ github.ref_name }}'
+          webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow
+          mention: 'here'
+          if_mention: failure
+
+  post-deployment:
+    name: Post-Deployment Tasks
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: success()
+    
+    steps:
+      - name: Invalidate CDN cache
+        run: |
+          curl -X POST https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache \
+            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}'
+      
+      - name: Update status page
+        run: |
+          curl -X POST https://api.statuspage.io/v1/pages/${{ secrets.STATUSPAGE_ID }}/incidents \
+            -H "Authorization: OAuth ${{ secrets.STATUSPAGE_API_KEY }}" \
+            -d "incident[name]=Deployment completed" \
+            -d "incident[status]=resolved" \
+            -d "incident[component_ids][]=${{ secrets.STATUSPAGE_COMPONENT_ID }}"
+      
+      - name: Trigger monitoring validation
+        run: |
+          curl -X POST https://api.newrelic.com/v2/applications/${{ secrets.NEWRELIC_APP_ID }}/deployments.json \
+            -H "X-Api-Key: ${{ secrets.NEWRELIC_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d "{\"deployment\": {\"revision\": \"${{ github.sha }}\", \"user\": \"${{ github.actor }}\"}}"

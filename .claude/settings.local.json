@@ -11,7 +11,10 @@
       "Bash(git rm:*)",
       "Bash(find:*)",
       "Bash(cp:*)",
-      "Bash(true)"
+      "Bash(true)",
+      "Bash(bundle exec rspec:*)",
+      "Bash(export RUBYOPT='-W0')",
+      "Bash(/usr/bin/env bundle exec rspec --version)"
     ],
     "deny": []
   }
