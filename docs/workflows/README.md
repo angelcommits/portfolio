@@ -1,12 +1,16 @@
-# Portfolio Backend Workflow Workbook
+# Workflows Documentation Index
 
+## 🎯 Overview
 
-## Core Documentation (English)
-- [Project Overview & Quick Start Guide](./00-project-overview.md)
-- [Development Environment Setup](./01-development-setup.md)
-- [API Development Workflows](./02-api-development.md)
-- [Testing Workflows and Best Practices](./03-testing-workflows.md)
-- [Domain-Driven Design Patterns & Migration Guide ✅](./04-domain-driven-design.md)
+This directory contains comprehensive workflow documentation for the Portfolio as a Service project. It serves as the primary reference for developers, providing step-by-step guides, best practices, and detailed workflows for every aspect of development.
+
+## 📚 Core Workflows
+
+- **[Project Overview & Quick Start Guide](./00-project-overview.md)** - Project mission, architecture overview, and 15-minute quick start
+- **[Development Environment Setup](./01-development-setup.md)** - Platform-specific setup guides and configuration
+- **[API Development Workflows](./02-api-development.md)** - RESTful API patterns, CRUD operations, and best practices
+- **[Testing Workflows and Best Practices](./03-testing-workflows.md)** - TDD, testing strategies, and quality assurance
+- **[Domain-Driven Design Patterns](./04-domain-driven-design-pattern.md)** - DDD implementation and migration guide
 
 ## 🎯 Purpose
 
