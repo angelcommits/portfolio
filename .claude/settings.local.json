@@ -14,7 +14,9 @@
       "Bash(true)",
       "Bash(bundle exec rspec:*)",
       "Bash(export RUBYOPT='-W0')",
-      "Bash(/usr/bin/env bundle exec rspec --version)"
+      "Bash(/usr/bin/env bundle exec rspec --version)",
+      "Bash(bundle:*)",
+      "Bash(export ZOXIDE_INIT=false)"
     ],
     "deny": []
   }
