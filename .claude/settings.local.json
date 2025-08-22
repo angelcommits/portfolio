@@ -17,7 +17,9 @@
       "Bash(/usr/bin/env bundle exec rspec --version)",
       "Bash(bundle:*)",
       "Bash(export ZOXIDE_INIT=false)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": []
   }
