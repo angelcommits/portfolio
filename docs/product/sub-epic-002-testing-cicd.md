@@ -33,6 +33,19 @@ Establish a robust testing infrastructure with comprehensive test coverage and a
 
 ## User Stories
 
+> **Note**: Individual stories are now tracked in separate documents in the [stories/](./stories/) directory for better tracking and parallel work.
+
+| Story ID | Title | Status | Document |
+|----------|-------|--------|----------|
+| STORY-001 | Repair and Configure RSpec Test Suite | ✅ Complete | [View](./stories/story-002-001-rspec-setup.md) |
+| STORY-002 | Implement Critical Backend Tests | 🔄 In Progress (15%) | [View](./stories/story-002-002-backend-tests.md) |
+| STORY-003 | Setup Frontend Testing Infrastructure | ✅ Complete | [View](./stories/story-002-003-jest-setup.md) |
+| STORY-004 | Implement Frontend Component Tests | ⏳ Pending | [View](./stories/story-002-004-frontend-tests.md) |
+| STORY-005 | Fix GitHub Actions CI Pipeline | ✅ Complete | [View](./stories/story-002-005-ci-pipeline.md) |
+| STORY-006 | Implement E2E Testing with Cypress | ⏳ Pending | [View](./stories/story-002-006-e2e-cypress.md) |
+| STORY-007 | Setup Deployment Pipeline | ✅ Complete | [View](./stories/story-002-007-deployment.md) |
+| STORY-008 | Implement Performance Testing | ⏳ Pending | [View](./stories/story-002-008-performance.md) |
+
 ### STORY-001: Repair and Configure RSpec Test Suite
 **As a** backend developer  
 **I want to** have a working RSpec test suite  
