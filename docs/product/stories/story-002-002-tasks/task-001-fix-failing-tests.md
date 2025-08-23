@@ -1,11 +1,11 @@
 # TASK-002-002-001: Fix Failing Model Tests
 
 **Parent**: STORY-002-002 - Backend Unit and Integration Tests  
-**Status**: 🔄 IN PROGRESS  
+**Status**: ✅ COMPLETED  
 **Assignee**: Backend Developer  
 **Priority**: P0 (Blocking)  
 **Estimation**: 2 hours  
-**Time Spent**: 1 hour  
+**Time Spent**: 1.5 hours  
 
 ---
 
@@ -19,10 +19,10 @@ Make all existing tests pass by adjusting them to match actual model structure.
 
 ## ✅ Acceptance Criteria
 
-- [ ] All 18 failing tests fixed
-- [ ] Tests match actual model structure
-- [ ] No skip or pending tests
-- [ ] CI pipeline green for backend tests
+- [x] All 18 failing tests fixed
+- [x] Tests match actual model structure
+- [x] No skip or pending tests
+- [x] CI pipeline green for backend tests
 
 ## 📊 Failing Tests Analysis
 
@@ -96,12 +96,21 @@ Make all existing tests pass by adjusting them to match actual model structure.
 - [ ] Add missing email validations
 - [ ] Fix remaining association issues
 
-## 🎯 Current Status (1 hour spent)
+## 🎯 Final Status - COMPLETED ✅
 
-**Failures Reduced**: 18 → 9 (50% progress)  
-**Key Issues Fixed**: Module naming, factory mismatches  
-**Remaining Work**: Model validation fixes  
-**Next Action**: Apply quick fixes to Account model
+**Total Time**: 1.5 hours (within 2-hour timebox)  
+**Failures Fixed**: 18 → 0 (100% success)  
+
+### Resolution Steps:
+1. **First Pass (45 min)**: Fixed module naming (Iam → IAM), factory mismatches - reduced to 9 failures
+2. **Second Pass (45 min)**: Fixed Account model validations, scopes, methods - reduced to 0 failures
+
+### Key Changes:
+- Updated IAM::Account model with integer status constants
+- Added email validations and format checking
+- Implemented lock!/unlock! methods
+- Fixed all factory definitions
+- Updated test expectations to match actual model
 
 See detailed findings: `spec/TASK-001-FINDINGS.md`
 
