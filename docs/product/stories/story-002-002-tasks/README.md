@@ -1,10 +1,10 @@
 # STORY-002-002: Backend Tests - Task Breakdown
 
-**Story Status**: 🔄 IN PROGRESS (15% Complete)  
+**Story Status**: 🔄 IN PROGRESS (25% Complete)  
 **Total Tasks**: 6  
-**Completed**: 0  
-**In Progress**: 1  
-**Blocked**: 0  
+**Completed**: 1  
+**In Progress**: 0  
+**Ready**: 5  
 
 ---
 
@@ -32,7 +32,7 @@ TASK-006 (Coverage to 80%)
 
 | Task | Title | Status | Assignee | Hours | Priority |
 |------|-------|--------|----------|-------|----------|
-| [001](./task-001-fix-failing-tests.md) | Fix Failing Tests | 🔄 IN PROGRESS | Backend Dev | 2h | P0 |
+| [001](./task-001-fix-failing-tests.md) | Fix Failing Tests | ✅ COMPLETED | Backend Dev | 1.5h | P0 |
 | [002](./task-002-model-tests.md) | Model Test Coverage | ⏳ PENDING | Backend Dev | 3h | P0 |
 | [003](./task-003-controller-tests.md) | API Controller Tests | ⏳ PENDING | Backend Dev | 4h | P0 |
 | [004](./task-004-service-tests.md) | Service Logic Tests | ⏳ PENDING | Backend Dev | 3h | P1 |

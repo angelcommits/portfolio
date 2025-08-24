@@ -19,7 +19,13 @@
       "Bash(export ZOXIDE_INIT=false)",
       "Bash(mv:*)",
       "Bash(git commit:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(pushd:*)",
+      "Bash(RUBYOPT='-W0' COVERAGE=true bundle exec rspec spec/contexts/identity/application/register_user_spec.rb --format progress)",
+      "Bash(popd:*)",
+      "Bash(RUBYOPT='-W0' bundle exec rspec spec/services/oauth/identity_service_spec.rb --format documentation)",
+      "Bash(RUBYOPT='-W0' COVERAGE=true bundle exec rspec spec/services/ spec/contexts/identity/application/ --format progress)",
+      "Bash(RUBYOPT='-W0' COVERAGE=true bundle exec rspec spec/services/oauth/ spec/services/inference/ spec/contexts/identity/application/ --format progress)"
     ],
     "deny": []
   }

@@ -1,11 +1,12 @@
 # TASK-002-002-002: Complete Model Test Coverage
 
 **Parent**: STORY-002-002 - Backend Unit and Integration Tests  
-**Status**: ⏳ PENDING  
+**Status**: 🔄 IN PROGRESS  
 **Assignee**: Backend Developer  
 **Priority**: P0  
 **Estimation**: 3 hours  
 **Time Spent**: 0 hours  
+**Branch**: `task/story-002-002-model-tests`  
 
 ---
 
