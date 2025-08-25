@@ -1,41 +1,72 @@
 # 📋 Product Documentation
 
-## 📁 Estructura Organizacional
+**Date**: August 25, 2025  
+**Current Sprint**: Sprint 2 - Testing & CI/CD  
+**Week**: 2-3 of 7-week stabilization plan
+
+## 📁 Estructura Híbrida
 
 ```
 product/
-├── 01-requirements/    # Requisitos del producto y visión
-├── 02-roadmap/        # Roadmap y planificación de releases
-├── 03-epics/          # Definición y tracking de épicas
-├── 04-backlog/        # Backlogs de producto y técnico
-└── 05-user-stories/   # Historias de usuario por estado
+├── 01-requirements/    # PRD, visión, métricas de éxito
+├── 02-roadmap/        # Roadmap y planificación de releases  
+├── 03-epics/          # Épicas con referencias a stories
+│   ├── active/        # Épicas en progreso
+│   │   └── {epic}/    # Cada épica contiene:
+│   │       ├── README.md     # Definición del epic
+│   │       ├── stories.md    # Referencias a user stories
+│   │       └── backlog.md    # Backlog específico del epic
+│   └── completed/     # Épicas completadas
+├── 04-backlog/        # Backlog general y deuda técnica
+└── 05-user-stories/   # Stories organizadas por estado sprint
+    ├── current-sprint/
+    ├── ready/
+    ├── draft/
+    └── completed/
 ```
 
 ## 🔗 Enlaces Rápidos
 
-- [PRD - Product Requirements](./01-requirements/PRD.md)
-- [Roadmap Actual](./02-roadmap/README.md)
-- [Épicas Activas](./03-epics/active/)
-- [Sprint Actual](./05-user-stories/current-sprint/)
-- [Backlog de Producto](./04-backlog/product-backlog.md)
-- [Deuda Técnica](./04-backlog/technical-debt.md)
+### Current Focus
+- [Sprint 2 Stories](./05-user-stories/current-sprint/sprint-002/)
+- [Testing Epic (002)](./03-epics/active/002-testing-cicd/)
+- [Sprint Status](../sprints/active/sprint-002/)
 
-## 📊 Estado Actual
+### Planning
+- [Product Requirements (PRD)](./01-requirements/PRD.md)
+- [Roadmap](./02-roadmap/)
+- [Master Epic Status](./03-epics/active/)
 
-- **Sprint Activo**: Sprint 2 - Testing & CI/CD
-- **Epic en Progreso**: Master Stabilization
-- **Stories Completadas**: 0/8 en Sprint 2
+### Backlogs
+- [Product Backlog](./04-backlog/product-backlog.md)
+- [Technical Debt](./04-backlog/technical-debt.md)
+- [Icebox](./04-backlog/icebox.md)
 
-## 🔄 Flujo de Trabajo
+## 📊 Current Status
 
-1. **Requirements** → Define qué construir
-2. **Roadmap** → Planifica cuándo construir
-3. **Epics** → Agrupa funcionalidad relacionada
-4. **User Stories** → Define trabajo específico
-5. **Backlog** → Prioriza trabajo pendiente
+### Sprint 2 Progress
+- **Started**: August 19, 2025
+- **Target**: 80% test coverage
+- **Current**: 15% coverage
+- **Stories**: 0/8 completed
 
-## 📝 Convenciones
+### Master Stabilization Timeline
+| Phase | Week | Dates | Status |
+|-------|------|-------|--------|
+| Documentation | 1 | Aug 12-18 | ✅ Completed |
+| Testing & CI/CD | 2-3 | Aug 19-Sep 1 | 🔄 Current |
+| Authentication | 4 | Sep 2-8 | ⏳ Pending |
+| Standardization | 5-6 | Sep 9-22 | ⏳ Pending |
+| Production | 7 | Sep 23-29 | ⏳ Pending |
 
-- Stories: `{epic-number}-{story-number}-{name}.md`
-- Epics: `{number}-{name}.md` para sub-epics
-- Estados: draft → ready → current → completed
+## 🔄 Workflow
+
+1. **Epic Definition** → Define scope in `03-epics/`
+2. **Backlog Refinement** → Items in epic's `backlog.md`
+3. **Story Creation** → Move to `05-user-stories/draft/`
+4. **Sprint Planning** → Move to `05-user-stories/ready/`
+5. **Sprint Execution** → Move to `05-user-stories/current-sprint/`
+6. **Completion** → Move to `05-user-stories/completed/`
+
+---
+*Last Updated: August 25, 2025*
