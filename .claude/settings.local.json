@@ -25,7 +25,16 @@
       "Bash(popd:*)",
       "Bash(RUBYOPT='-W0' bundle exec rspec spec/services/oauth/identity_service_spec.rb --format documentation)",
       "Bash(RUBYOPT='-W0' COVERAGE=true bundle exec rspec spec/services/ spec/contexts/identity/application/ --format progress)",
-      "Bash(RUBYOPT='-W0' COVERAGE=true bundle exec rspec spec/services/oauth/ spec/services/inference/ spec/contexts/identity/application/ --format progress)"
+      "Bash(RUBYOPT='-W0' COVERAGE=true bundle exec rspec spec/services/oauth/ spec/services/inference/ spec/contexts/identity/application/ --format progress)",
+      "Bash(ssh-add:*)",
+      "Bash(ssh:*)",
+      "Bash(cat:*)",
+      "Bash(git filter-branch:*)",
+      "Bash(RUBYOPT='-W0' COVERAGE=true bundle exec rspec --format progress --dry-run)",
+      "Bash(rails generate model:*)",
+      "Bash(tree:*)",
+      "Bash(rmdir:*)",
+      "Bash(rm:*)"
     ],
     "deny": []
   }
