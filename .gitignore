@@ -55,6 +55,9 @@ spec/examples.txt
 cypress/videos/
 cypress/screenshots/
 
+# LLM Agent configurations
+.claude/
+
 # Temporary - submodules to be configured later
 portfolio-backend/
 portfolio-frontend/

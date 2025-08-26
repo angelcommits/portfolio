@@ -1,14 +1,14 @@
-# Portfolio as a Service - Documentation Hub
+# 📚 Portfolio Project - Master Documentation Index
+
+> **Central hub for all project documentation - Reorganized 2025-08-24**
 
 ## 🎯 Quick Navigation
 
-**New to the project?** Start with the [Master Documentation Index](./INDEX.md) for a complete overview.
-
-### 🚀 Quick Access
-- **[Master Index](./INDEX.md)** - Complete documentation overview and navigation
-- **[Quick Reference](./QUICK_REFERENCE.md)** - Essential commands and troubleshooting
-- **[Project Overview](./workflows/00-project-overview.md)** - 15-minute project introduction
-- **[Development Setup](./workflows/01-development-setup.md)** - Environment configuration guide
+### 🚀 Essential Documents
+- **[Quick Reference](./QUICK_REFERENCE.md)** - Commands, troubleshooting, quick solutions
+- **[Sprint Status Dashboard](./STATUS-DASHBOARD.md)** - Current sprint progress
+- **[Product Requirements](./product/product-requirements.md)** - Product specifications
+- **[Development Setup](./workflows/01-development-setup.md)** - Environment configuration
 
 ## 📚 Documentation Categories
 
@@ -16,37 +16,40 @@ This documentation hub contains comprehensive technical, product, and developmen
 
 ### 📁 Documentation Structure
 
-| Category | Description | Quick Access |
-|----------|-------------|-------------|
-| **[🏗️ Architecture](./architecture/)** | System design and technical specifications | [Index](./architecture/INDEX.md) |
-| **[🔧 Implementation](./implementation/)** | Step-by-step implementation guides | [Index](./implementation/INDEX.md) |
-| **[🔄 Workflows](./workflows/)** | Development processes and best practices | [Index](./workflows/INDEX.md) |
-| **[🛠️ Development](./development/)** | Setup guides and development resources | [Index](./development/INDEX.md) |
-| **[📊 Product](./product/)** | Product requirements and business specs | [Epic](./product/epic-master-stabilization.md) |
-| **[🔍 Audit](./audit/)** | Quality assessments and reports | [Latest](./audit/phase2-completion-report.md) |
+| Category | Description | Key Documents |
+|----------|-------------|---------------|
+| **[🏗️ Architecture](./architecture/)** | System design, DDD, database schemas | [DDD Contexts](./architecture/domain-driven-design/contexts.md) • [DB Schema](./architecture/database/schema.md) |
+| **[📦 Product](./product/)** | Epics, user stories, backlog | [Master Epic](./product/epics/master-stabilization.md) • [User Stories](./product/user-stories/) |
+| **[🏃 Sprints](./sprints/)** | Sprint planning, standups, reports | [Current Sprint](./sprints/current/) • [Completed Tasks](./sprints/completed/) |
+| **[🧪 Testing](./testing/)** | Test guides, QA reviews | [Auth Testing](./testing/auth-testing-guide.md) • [QA Reviews](./testing/qa-reviews/) |
+| **[💻 Development](./development/)** | Setup, implementation guides | [Setup](./development/01%20SETUP.md) • [Implementation](./development/02%20Implementation/) |
+| **[🔄 Workflows](./workflows/)** | Git flow, development processes | [Git Flow](./workflow/GIT-FLOW-STRATEGY.md) • [DDD Pattern](./workflows/04-domain-driven-design-pattern.md) |
+| **[🌐 API](./api/)** | API documentation and specs | [API Docs](./api/README.md) |
+| **[📚 Resources](./resources/)** | Templates, archives, audits | [Templates](./resources/templates/) • [Archive](./resources/archive/) |
 
-## 🎯 Current Project Status
+## 🎯 Current Sprint: STORY-002-002 Backend Tests
 
-### Phase: Master Stabilization Epic - Phase 3 (Quality Improvements)
+### Active Development
+- **Story**: Implement Critical Backend Tests
+- **Goal**: Achieve >80% test coverage
+- **Status**: 15% coverage → 80% target
+- **Branch**: `task/story-002-002-model-tests`
 
-The project is in the **documentation quality improvement phase** as part of the Master Stabilization Epic. We are consolidating and standardizing all documentation to achieve production-ready state.
+### Sprint Progress
+- ✅ Test infrastructure analyzed
+- ✅ Story model created
+- 🔄 Fixing failing tests
+- ⏳ Creating model factories
+- ⏳ Writing comprehensive tests
 
-#### 📈 Current Sprint Progress
-- ✅ **Phase 1**: Documentation migration and organization
-- ✅ **Phase 2**: System analysis and quality reporting
-- 🔄 **Phase 3**: Documentation quality improvements (current)
-- ⏳ **Phase 4**: Testing infrastructure and CI/CD
-- ⏳ **Phase 5**: Authentication completion and production readiness
-
-#### 🎯 Key Objectives
-- ✅ Master documentation index created
-- ✅ Category indexes standardized
-- 🔄 Implementation guides improved
-- 🔄 Navigation and quick reference enhanced
-- ⏳ Complete Rodauth authentication migration
-- ⏳ Full CI/CD pipeline implementation
-- ⏳ Comprehensive testing coverage
-- ⏳ Production deployment preparation
+### Documentation Reorganization Status
+- ✅ **Phase 1**: Structure created
+- ✅ **Phase 2**: Sprint docs moved from spec/
+- ✅ **Phase 3**: Architecture docs centralized
+- ✅ **Phase 4**: Product docs organized
+- ✅ **Phase 5**: Obsolete files cleaned
+- ✅ **Phase 6**: Master index created
+- 🔄 **Phase 7**: Conventions being established
 
 ## 🚀 Quick Start by Role
 
@@ -94,23 +97,22 @@ The project is in the **documentation quality improvement phase** as part of the
 - **Status**: 🧪 Experimental sandbox environment
 - **Documentation**: [Implementation](./implementation/future/)
 
-## 📅 Master Stabilization Timeline
+## 📊 Quick Status
 
-We are following a structured 5-phase approach to achieve production readiness:
+### Testing Coverage Progress
+| Component | Current | Target | Status |
+|-----------|---------|--------|--------|
+| Models | ~40% | >90% | 🔄 In Progress |
+| Controllers | 0% | >80% | 🔴 Blocked |
+| Services | ~5% | >85% | 🔴 Not Started |
+| **Overall** | ~15% | >80% | 🔄 Active Development |
 
-| Phase | Duration | Status | Description | Progress |
-|-------|----------|--------|-------------|----------|
-| **Phase 1** | 1 week | ✅ **Complete** | Documentation migration and consolidation | 100% |
-| **Phase 2** | 1 week | ✅ **Complete** | System analysis and quality reporting | 100% |
-| **Phase 3** | 1 week | 🔄 **Current** | Documentation quality improvements | 80% |
-| **Phase 4** | 2 weeks | ⏳ **Planned** | Testing infrastructure and CI/CD | 0% |
-| **Phase 5** | 1 week | ⏳ **Planned** | Production readiness and deployment | 0% |
-
-### 🎯 Current Phase 3 Focus
-- Documentation standardization and navigation improvements
-- Implementation guide enhancements
-- Quick reference and troubleshooting guides
-- Cross-reference optimization and link validation
+### Recent Documentation Updates (2025-08-24)
+- ✅ Moved all sprint docs from `spec/` to proper locations
+- ✅ Centralized architecture documentation
+- ✅ Organized product management docs
+- ✅ Created comprehensive index structure
+- ✅ Cleaned obsolete files and backups
 
 ## 🛠️ Technology Stack
 
